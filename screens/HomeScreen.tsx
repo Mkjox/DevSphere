@@ -11,9 +11,11 @@ import {
 } from "react-native-paper";
 import { LineChart } from "react-native-chart-kit";
 import Colors from "../assets/colors/colors";
+import { useNavigation } from "@react-navigation/native";
 
-const HomeScreen = ({ navigation }) => {
+const HomeScreen = () => {
   const theme = useTheme();
+  const navigation = useNavigation();
 
   const data = {
     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
@@ -141,13 +143,13 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     marginBottom: 16,
-    marginLeft: 15
+    marginLeft: 15,
   },
   postCard: {
     marginBottom: 16,
     borderRadius: 12,
     backgroundColor: Colors.background,
-    margin: 15
+    margin: 15,
   },
   postHeader: {
     flexDirection: "row",

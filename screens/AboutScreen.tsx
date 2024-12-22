@@ -193,6 +193,9 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.background,
     alignItems: 'center',
   },
+  statIcon: {
+    marginRight: 8,
+  },
   statValue: {
     fontSize: 24,
     fontWeight: 'bold',

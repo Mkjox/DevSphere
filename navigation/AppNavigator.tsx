@@ -3,6 +3,7 @@ import { StyleSheet } from "react-native";
 import HomeScreen from "../screens/HomeScreen";
 import AboutScreen from "../screens/AboutScreen";
 import ProfileScreen from "../screens/ProfileScreen";
+import LoginScreen from '../screens/LoginScreen';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from "@react-navigation/stack";
@@ -10,6 +11,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import CustomBottomTabBar from '../components/CustomBottomTabBar';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+import SettingsScreen from "../screens/SettingsScreen";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -18,9 +20,13 @@ const Drawer = createDrawerNavigator();
 function DrawerNavigator() {
     return (
         <Drawer.Navigator>
-            <Drawer.Screen name="Home" component={HomeScreen} />
-            <Drawer.Screen name="About" component={AboutScreen} />
-            <Drawer.Screen name="Profile" component={ProfileScreen} />
+            <Drawer.Screen 
+                name="Settings"
+                component={SettingsScreen}
+                options={{
+                    headerShown: false
+                }}
+            />
         </Drawer.Navigator>
     );
 }
@@ -59,6 +65,13 @@ function TabNavigator() {
 function StackNavigator() {
     return (
         <Stack.Navigator>
+            <Stack.Screen
+                name="Login"
+                component={LoginScreen}
+                options={{
+                    headerShown: false
+                }}
+            />
             <Stack.Screen
                 name="TabNavigator"
                 component={TabNavigator}
